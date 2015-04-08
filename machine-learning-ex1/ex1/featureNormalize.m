@@ -30,8 +30,9 @@ sigma = zeros(1, size(X, 2));
 mu = mean(X);
 sigma = std(X);
 
-X_norm(:,1) = (X(:,1) - mu(1))/sigma(1);
-X_norm(:,2) = (X(:,2) - mu(2))/sigma(2);
+for i = 1:size(X,2)
+    X_norm(:,i) = (X(:,i) - mu(i))/sigma(i);
+end
 
 
 % ============================================================
