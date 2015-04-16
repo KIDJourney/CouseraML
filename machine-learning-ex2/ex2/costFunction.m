@@ -22,11 +22,11 @@ grad = zeros(size(theta));
 
 % for i = 1:size(X,1) 
     % J += -y(i) * log(sigmoid())
-J = sum (-y * (log(sigmoid(X * theta))') - 
-            (1 - y) * (log(1 - sigmoid(X * theta)))' )/m ;
+h = sigmoid(X * theta);
 
+J = (-y' * log(h) - (1-y)' * (log(1-h)) ) / m;
 
-
+grad = 1/m * (X' * (h - y)); 
 % =============================================================
 
 end
